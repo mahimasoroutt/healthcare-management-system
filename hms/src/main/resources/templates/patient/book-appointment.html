@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Book Appointment')}"></head>
+<body class="d-flex flex-column min-vh-100">
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0"><i class="bi bi-calendar-plus text-primary me-2"></i> Book a Consultation</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div th:if="${param.error == 'conflict'}" class="alert alert-danger">
+                        The selected time slot conflicts with an existing appointment. Please choose another time.
+                    </div>
+                    
+                    <form th:action="@{/patient/appointments/book}" th:object="${bookingDto}" method="post">
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-muted small">Select Doctor</label>
+                            <select class="form-select" th:field="*{doctorId}" required>
+                                <option value="" disabled selected>Choose a physician...</option>
+                                <option th:each="doc : ${doctors}" th:value="${doc.id}" th:text="${doc.name}"></option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-muted small">Preferred Date & Time</label>
+                            <input type="datetime-local" class="form-control" th:field="*{startTime}" required>
+                            <div class="form-text small">Appointments are scheduled for 30-minute intervals.</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-muted small">Reason for Visit</label>
+                            <textarea class="form-control" th:field="*{reason}" rows="3" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a th:href="@{/patient/dashboard}" class="btn btn-light border">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-4">Confirm Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+</body>
+</html>

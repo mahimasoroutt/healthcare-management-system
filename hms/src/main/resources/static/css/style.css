@@ -1,0 +1,112 @@
+
+:root {
+    --primary-color: #153B50;
+    --accent-color: #187C80;
+    --bg-color: #F5F7F8;
+    --surface-color: #FFFFFF;
+    --main-text: #26343D;
+    --sec-text: #647580;
+    --border-color: #E2E8F0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--main-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.navbar-custom .navbar-brand {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+.navbar-custom .nav-link:hover, .navbar-custom .nav-link.active {
+    color: #ffffff;
+}
+
+/* Cards & Surfaces */
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.card-header {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 4px;
+    font-weight: 500;
+}
+.btn-primary:hover {
+    background-color: #136265;
+    border-color: #136265;
+}
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Tables */
+.table {
+    color: var(--main-text);
+}
+.table thead th {
+    border-bottom: 2px solid var(--border-color);
+    color: var(--sec-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+.table td {
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Layout */
+.page-title {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--sec-text);
+    background-color: #f8fafc;
+    border: 1px dashed var(--border-color);
+    border-radius: 6px;
+}
+.empty-state i {
+    font-size: 2.5rem;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+}

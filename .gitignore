@@ -1,0 +1,54 @@
+# =====================================
+# Build and Dependency Directories
+# =====================================
+target/
+**/target/
+build/
+**/build/
+
+# =====================================
+# IDE and Editor Files
+# =====================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+.sts4-cache/
+
+# =====================================
+# Local Configuration & Secrets
+# =====================================
+.env
+*.env
+!*.env.example
+application-local.properties
+**/application-local.properties
+*.local.properties
+
+# =====================================
+# Python Temporary & Cache Files
+# =====================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+env/
+venv/
+
+# =====================================
+# Logs and OS Specific Files
+# =====================================
+*.log
+logs/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
